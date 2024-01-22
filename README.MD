@@ -11,18 +11,25 @@ Simulazione di un database per una piattaforma universitaria strutturata in tabe
 1. SELECT
     *
 FROM
-    students
+    `students`
 WHERE
     YEAR(`date_of_birth`) = 1990;
 2. SELECT
     *
 FROM
-    courses
+    `courses`
 WHERE
     (`cfu`) > 10;
 3. SELECT
     *
 FROM
-    students
+    `students`
 WHERE
     YEAR(CURRENT_DATE) - YEAR(date_of_birth) = 30;
+
+4. SELECT
+    *
+FROM
+    `courses`
+WHERE
+    `period` = "I semestre" AND `year` = 1;
