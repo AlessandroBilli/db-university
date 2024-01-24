@@ -83,4 +83,13 @@ FROM
 JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
 WHERE  `degrees`.`level` = "magistrale" AND `departments`.`name` = "Dipartimento di Neuroscienze"
 
+3. 
+
+
+SELECT `teachers`.*, `courses`.*
+FROM `teachers`
+INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+INNER JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+WHERE `teachers`.`id` = 44
+
   
