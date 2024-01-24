@@ -25,7 +25,7 @@ WHERE
 FROM
     `students`
 WHERE
-    YEAR(CURRENT_DATE) - YEAR(date_of_birth) = 30;
+    YEAR(CURRENT_DATE) - YEAR(date_of_birth) > 30;
 
 4. SELECT
     *
@@ -64,3 +64,23 @@ FROM
     `teachers`
 WHERE
     `phone` IS NULL;
+
+  ## QUERY JOIN
+
+  1.  
+
+SELECT `students`.* ,  `degrees`.`name`
+FROM `students`
+INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = "Corso di Laurea in Economia"
+
+2. 
+  
+SELECT
+    *
+FROM
+    `degrees`
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+WHERE  `degrees`.`level` = "magistrale" AND `departments`.`name` = "Dipartimento di Neuroscienze"
+
+  
